@@ -15,7 +15,7 @@
     if (Array.isArray(stored)) saved = new Set(stored.filter(id => knownIds.has(id)));
   } catch { storageAvailable = false; }
   const categories = ['all', ...new Set(catalog.map(item => item.category))];
-  const kinds = ['all','Skill','claude','Skill collection','AI agent','Research framework'];
+  const kinds = ['all','Skill','claude','Skill collection','AI agent','Research framework','MCP server'];
   let state;
   let toastTimer;
   let detailTrigger;
@@ -58,6 +58,7 @@
   function typeInfo(item) {
     if (item.kind === 'Skill') return { icon:'file-code', label:'Agent skill' };
     if (item.kind === 'Skill collection') return { icon:'book', label:'Skill collection' };
+    if (item.kind === 'MCP server') return { icon:'database', label:'MCP server' };
     if (item.kind === 'AI agent') return { icon:'terminal-2', label:'AI agent' };
     return { icon:'stack-2', label:'Research framework' };
   }

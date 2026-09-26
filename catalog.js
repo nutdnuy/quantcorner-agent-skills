@@ -2412,5 +2412,477 @@ window.CATALOG = [
     "verifiedAsOf": "2026-09-26",
     "detail": "Source review is pinned to the revision supplied by Nuth. The agent configures dashboard frames rather than writing React. Available data depends on each public provider and instrument.",
     "skillPath": "skills/zframes/SKILL.md"
+  },
+  {
+    "id": "skill-marian-catalyst-map",
+    "title": "Catalyst Map",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Rank upcoming company and macro catalysts and map how events may affect related watchlist names and portfolio exposures.",
+    "tags": [
+      "Catalysts",
+      "Watchlists",
+      "Event risk"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/idea-discovery/catalyst-map",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Rank upcoming company and macro catalysts and map how events may affect related watchlist names and portfolio exposures.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/idea-discovery/catalyst-map/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/idea-discovery/catalyst-map/SKILL.md"
+  },
+  {
+    "id": "skill-marian-watchlist-review",
+    "title": "Watchlist Review",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Prioritize watchlist candidates by evidence quality, catalysts, tradability, and overlap to focus the next research session.",
+    "tags": [
+      "Watchlists",
+      "Research triage",
+      "Liquidity"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/idea-discovery/watchlist-review",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Prioritize watchlist candidates by evidence quality, catalysts, tradability, and overlap to focus the next research session.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/idea-discovery/watchlist-review/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/idea-discovery/watchlist-review/SKILL.md"
+  },
+  {
+    "id": "skill-marian-earnings-preview",
+    "title": "Earnings Preview · Trading Skills",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Frame upcoming earnings debates, potential surprises, and peer read-through risks before a company reports.",
+    "tags": [
+      "Earnings",
+      "Peer effects",
+      "Event risk"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/market-context/earnings-preview",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Frame upcoming earnings debates, potential surprises, and peer read-through risks before a company reports.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/market-context/earnings-preview/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/market-context/earnings-preview/SKILL.md"
+  },
+  {
+    "id": "skill-marian-macro-event-analysis",
+    "title": "Macro Event Analysis",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Map economic releases and policy events to transmission channels and timing risks for the markets under review.",
+    "tags": [
+      "Macro",
+      "Economic calendar",
+      "Scenarios"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/market-context/macro-event-analysis",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Map economic releases and policy events to transmission channels and timing risks for the markets under review.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/market-context/macro-event-analysis/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/market-context/macro-event-analysis/SKILL.md"
+  },
+  {
+    "id": "skill-marian-market-regime-analysis",
+    "title": "Market Regime Analysis · Trading Skills",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Algorithmic trading",
+    "description": "Review trend, volatility, breadth, and upcoming events to assess whether current conditions fit a trading approach.",
+    "tags": [
+      "Regimes",
+      "Breadth",
+      "Volatility"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/market-context/market-regime-analysis",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Review trend, volatility, breadth, and upcoming events to assess whether current conditions fit a trading approach.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/market-context/market-regime-analysis/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/market-context/market-regime-analysis/SKILL.md"
+  },
+  {
+    "id": "skill-marian-journal-pattern-analyzer",
+    "title": "Journal Pattern Analyzer",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Algorithmic trading",
+    "description": "Find recurring strengths and mistakes across trade journals while distinguishing process patterns from small-sample outcomes.",
+    "tags": [
+      "Trade journals",
+      "Process review",
+      "Patterns"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/review-learning/journal-pattern-analyzer",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Find recurring strengths and mistakes across trade journals while distinguishing process patterns from small-sample outcomes.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/review-learning/journal-pattern-analyzer/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/review-learning/journal-pattern-analyzer/SKILL.md"
+  },
+  {
+    "id": "skill-marian-post-trade-review",
+    "title": "Post-Trade Review",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Algorithmic trading",
+    "description": "Reconstruct a completed trade and compare thesis, execution, sizing, and rule adherence with the original plan.",
+    "tags": [
+      "Execution",
+      "Trade review",
+      "Discipline"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/review-learning/post-trade-review",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Reconstruct a completed trade and compare thesis, execution, sizing, and rule adherence with the original plan.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/review-learning/post-trade-review/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/review-learning/post-trade-review/SKILL.md"
+  },
+  {
+    "id": "skill-marian-evidence-gap-check",
+    "title": "Evidence Gap Check",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Identify missing facts, unsupported assumptions, and unresolved questions that should guide further investment research.",
+    "tags": [
+      "Evidence",
+      "Research gaps",
+      "Due diligence"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/thesis-validation/evidence-gap-check",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Identify missing facts, unsupported assumptions, and unresolved questions that should guide further investment research.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/thesis-validation/evidence-gap-check/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/thesis-validation/evidence-gap-check/SKILL.md"
+  },
+  {
+    "id": "skill-marian-thesis-validation",
+    "title": "Thesis Validation",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Test whether an investment thesis has a clear claim, supporting evidence, dependencies, timeframe, and conditions that would invalidate it.",
+    "tags": [
+      "Thesis",
+      "Falsifiability",
+      "Evidence"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/thesis-validation/thesis-validation",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Test whether an investment thesis has a clear claim, supporting evidence, dependencies, timeframe, and conditions that would invalidate it.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/thesis-validation/thesis-validation/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/thesis-validation/thesis-validation/SKILL.md"
+  },
+  {
+    "id": "skill-marian-portfolio-concentration",
+    "title": "Portfolio Concentration Review",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Portfolio & risk",
+    "description": "Inspect issuer, sector, theme, and correlated exposures to identify concentration hidden behind apparently diversified holdings.",
+    "tags": [
+      "Concentration",
+      "Exposure",
+      "Diversification"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/trade-construction/portfolio-concentration",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Inspect issuer, sector, theme, and correlated exposures to identify concentration hidden behind apparently diversified holdings.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/trade-construction/portfolio-concentration/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/trade-construction/portfolio-concentration/SKILL.md"
+  },
+  {
+    "id": "skill-marian-position-sizing",
+    "title": "Position Sizing",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Portfolio & risk",
+    "description": "Calculate a proposed position from equity, loss budget, entry, stop, fees, and slippage assumptions.",
+    "tags": [
+      "Risk budget",
+      "Position size",
+      "Trading costs"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/trade-construction/position-sizing",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Calculate a proposed position from equity, loss budget, entry, stop, fees, and slippage assumptions.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/trade-construction/position-sizing/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/trade-construction/position-sizing/SKILL.md"
+  },
+  {
+    "id": "skill-marian-risk-reward-sanity-check",
+    "title": "Risk–Reward Sanity Check",
+    "repo": "marian2js/trading-skills",
+    "kind": "Skill",
+    "category": "Portfolio & risk",
+    "description": "Challenge the internal consistency of a proposed entry, stop, and target, including whether the thesis supports the payoff assumptions.",
+    "tags": [
+      "Risk reward",
+      "Trade structure",
+      "Scenarios"
+    ],
+    "compatibility": [
+      "Agent Skills"
+    ],
+    "compatibilityNote": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "sourceUrl": "https://github.com/marian2js/trading-skills/tree/main/skills/trade-construction/risk-reward-sanity-check",
+    "evidence": "Verified the source SKILL.md frontmatter and documented workflow. Challenge the internal consistency of a proposed entry, stop, and target, including whether the thesis supports the payoff assumptions.",
+    "evidenceUrl": "https://github.com/marian2js/trading-skills/blob/main/skills/trade-construction/risk-reward-sanity-check/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Portable SKILL.md workflow for an Agent Skills-compatible host. Supply the relevant research or trade records; the skill itself is not a live market-data feed.",
+    "skillPath": "skills/trade-construction/risk-reward-sanity-check/SKILL.md"
+  },
+  {
+    "id": "mcp-alphavantage",
+    "title": "Alpha Vantage MCP",
+    "repo": "alphavantage/alpha_vantage_mcp",
+    "kind": "MCP server",
+    "category": "Market data",
+    "description": "Connect MCP clients to Alpha Vantage market-data functions for historical and current financial research.",
+    "tags": [
+      "Market data",
+      "API",
+      "Time series"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "An Alpha Vantage API key is required. README documents remote and local MCP connections; available data depends on the provider plan.",
+    "sourceUrl": "https://github.com/alphavantage/alpha_vantage_mcp",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/alphavantage/alpha_vantage_mcp/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "An Alpha Vantage API key is required. README documents remote and local MCP connections; available data depends on the provider plan."
+  },
+  {
+    "id": "mcp-financial-datasets",
+    "title": "Financial Datasets MCP",
+    "repo": "financial-datasets/mcp-server",
+    "kind": "MCP server",
+    "category": "Investment research",
+    "description": "Retrieve company financial statements, stock and crypto prices, and company news through the Financial Datasets API.",
+    "tags": [
+      "Financial statements",
+      "Prices",
+      "News"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Requires Python 3.10+ and a Financial Datasets API key. Follow the repository client configuration instructions.",
+    "sourceUrl": "https://github.com/financial-datasets/mcp-server",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/financial-datasets/mcp-server/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Requires Python 3.10+ and a Financial Datasets API key. Follow the repository client configuration instructions."
+  },
+  {
+    "id": "mcp-eodhistoricaldata",
+    "title": "EODHD MCP",
+    "repo": "EodHistoricalData/EODHD-MCP-Server",
+    "kind": "MCP server",
+    "category": "Market data",
+    "description": "Access historical prices, fundamentals, corporate events, technical indicators, and macro datasets from EOD Historical Data.",
+    "tags": [
+      "OHLCV",
+      "Fundamentals",
+      "Corporate actions"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Requires Python 3.10+ and an EODHD API key. Dataset access depends on subscription. Praams report tools can generate reports and send email.",
+    "sourceUrl": "https://github.com/EodHistoricalData/EODHD-MCP-Server",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/EodHistoricalData/EODHD-MCP-Server/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Requires Python 3.10+ and an EODHD API key. Dataset access depends on subscription. Praams report tools can generate reports and send email."
+  },
+  {
+    "id": "mcp-shanehull",
+    "title": "FRED MCP",
+    "repo": "shanehull/fred-mcp",
+    "kind": "MCP server",
+    "category": "Market data",
+    "description": "Search economic series and retrieve observations, release metadata, categories, and geographic data from FRED.",
+    "tags": [
+      "FRED",
+      "Macro data",
+      "Economic series"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Requires a FRED API key. Provides a Go binary with local stdio or remote HTTP/SSE configuration.",
+    "sourceUrl": "https://github.com/shanehull/fred-mcp",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/shanehull/fred-mcp/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Requires a FRED API key. Provides a Go binary with local stdio or remote HTTP/SSE configuration."
+  },
+  {
+    "id": "mcp-stefanoamorelli",
+    "title": "Nasdaq Data Link MCP",
+    "repo": "stefanoamorelli/nasdaq-data-link-mcp",
+    "kind": "MCP server",
+    "category": "Market data",
+    "description": "Explore and retrieve financial and economic datasets through the Nasdaq Data Link Python SDK and an MCP interface.",
+    "tags": [
+      "Datasets",
+      "Nasdaq Data Link",
+      "Economic data"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Community-maintained and not endorsed by Nasdaq. Requires Python 3.13+ and a Nasdaq Data Link API key; dataset entitlements vary.",
+    "sourceUrl": "https://github.com/stefanoamorelli/nasdaq-data-link-mcp",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/stefanoamorelli/nasdaq-data-link-mcp/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Community-maintained and not endorsed by Nasdaq. Requires Python 3.13+ and a Nasdaq Data Link API key; dataset entitlements vary."
+  },
+  {
+    "id": "mcp-daniel3303",
+    "title": "Equibles MCP",
+    "repo": "daniel3303/Equibles",
+    "kind": "MCP server",
+    "category": "Investment research",
+    "description": "Serve SEC filings, financial facts, institutional holdings, insider disclosures, and macro data from a self-hosted financial-data service.",
+    "tags": [
+      "SEC EDGAR",
+      "13F",
+      "Insider disclosures"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "The repository documents a self-hosted core and separate cloud features. Use the deployment guide and distinguish core data from cloud-only endpoints.",
+    "sourceUrl": "https://github.com/daniel3303/Equibles",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/daniel3303/Equibles/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "The repository documents a self-hosted core and separate cloud features. Use the deployment guide and distinguish core data from cloud-only endpoints."
+  },
+  {
+    "id": "mcp-16coffee",
+    "title": "Financial Modeling Prep MCP",
+    "repo": "16Coffee/finance-mcp",
+    "kind": "MCP server",
+    "category": "Investment research",
+    "description": "Retrieve financial statements, historical prices, company information, and news through a community Financial Modeling Prep connector.",
+    "tags": [
+      "Financial statements",
+      "FMP",
+      "Company data"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Requires Python 3.11+ and an FMP API key. This is a community connector; consult provider access and rate limits.",
+    "sourceUrl": "https://github.com/16Coffee/finance-mcp",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/16Coffee/finance-mcp/blob/main/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Requires Python 3.11+ and an FMP API key. This is a community connector; consult provider access and rate limits."
+  },
+  {
+    "id": "mcp-danchev",
+    "title": "Open Markets MCP",
+    "repo": "danchev/openmarkets",
+    "kind": "MCP server",
+    "category": "Market data",
+    "description": "Retrieve cross-asset market data, SEC disclosures, economic indicators, and portfolio analytics through configurable MCP tool groups.",
+    "tags": [
+      "Cross-asset",
+      "SEC EDGAR",
+      "Macro"
+    ],
+    "compatibility": [
+      "MCP"
+    ],
+    "compatibilityNote": "Python MCP server with selectable tool profiles. Data coverage and upstream requirements differ by provider; review the configuration documentation.",
+    "sourceUrl": "https://github.com/danchev/openmarkets",
+    "evidence": "The repository README documents the MCP interface, data coverage, and setup requirements.",
+    "evidenceUrl": "https://github.com/danchev/openmarkets/blob/master/README.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Python MCP server with selectable tool profiles. Data coverage and upstream requirements differ by provider; review the configuration documentation."
   }
 ];
