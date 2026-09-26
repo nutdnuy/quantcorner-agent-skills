@@ -2336,5 +2336,81 @@ window.CATALOG = [
     "featured": false,
     "verifiedAsOf": "2026-09-25",
     "detail": "Standalone Python research and backtesting library; not a Claude Code skill."
+  },
+  {
+    "id": "llm-wiki-starter",
+    "title": "LLM Wiki Starter",
+    "repo": "Migchw/llm-wiki-starter",
+    "kind": "AI agent",
+    "category": "Investment research",
+    "description": "Organize articles, filings, and transcripts into linked source notes and evidence-backed investment thesis drafts.",
+    "tags": [
+      "Obsidian",
+      "Knowledge base",
+      "Investment thesis"
+    ],
+    "compatibility": [
+      "Claude Code",
+      "Obsidian"
+    ],
+    "compatibilityNote": "A local Markdown vault template with Claude Code agents and Python source-capture tools. Open the repository as a project and follow its setup guide.",
+    "sourceUrl": "https://github.com/Migchw/llm-wiki-starter",
+    "evidence": "README documents source capture, linked notes, research commands, and separate evidence and thesis review roles.",
+    "evidenceUrl": "https://github.com/Migchw/llm-wiki-starter#readme",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "A complete investment-research workspace with an Obsidian vault and agent workflows. Source notes distinguish facts, interpretations, and open questions; thesis drafts require review."
+  },
+  {
+    "id": "skill-book-to-skill",
+    "title": "Book to Skill",
+    "repo": "virgiliojr94/book-to-skill",
+    "kind": "Skill",
+    "category": "Investment research",
+    "description": "Turn books and document collections into reusable agent skills with chapter references, decision rules, and research notes.",
+    "tags": [
+      "Books",
+      "Skill creation",
+      "Knowledge extraction"
+    ],
+    "compatibility": [
+      "Claude Code",
+      "GitHub Copilot CLI",
+      "Amp"
+    ],
+    "compatibilityNote": "The root SKILL.md supports Claude Code and other Agent Skills hosts. Document extraction uses Python with optional format-specific dependencies.",
+    "sourceUrl": "https://github.com/virgiliojr94/book-to-skill",
+    "evidence": "The root SKILL.md defines the converter; README describes chapter files, a glossary, patterns, and a quick-reference sheet.",
+    "evidenceUrl": "https://github.com/virgiliojr94/book-to-skill/blob/master/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "A general document-to-skill converter useful for organizing research reading. It accepts files or collections; extraction requirements depend on format, and scanned PDFs need OCR first.",
+    "skillPath": "SKILL.md"
+  },
+  {
+    "id": "skill-zframes",
+    "title": "zframes",
+    "repo": "zentryHQ/zframes",
+    "kind": "Skill",
+    "category": "Market data",
+    "description": "Build and update personal market dashboards from a JSON specification, with live data widgets and a local CLI runtime.",
+    "tags": [
+      "Market dashboard",
+      "Live data",
+      "JSON"
+    ],
+    "compatibility": [
+      "Claude Code",
+      "Codex",
+      "Cursor"
+    ],
+    "compatibilityNote": "README at the linked revision lists Claude Code as the primary host and Codex, Cursor, and Gemini CLI as compatible. The skill drives the npm zframes CLI.",
+    "sourceUrl": "https://github.com/zentryHQ/zframes/tree/0b6efb5012362e33b3ee396d0ed9789015299f79",
+    "evidence": "The skill defines create, update, serve, and shared-dashboard workflows; it validates dashboard.json and serves the prebuilt runtime.",
+    "evidenceUrl": "https://github.com/zentryHQ/zframes/blob/0b6efb5012362e33b3ee396d0ed9789015299f79/skills/zframes/SKILL.md",
+    "featured": false,
+    "verifiedAsOf": "2026-09-26",
+    "detail": "Source review is pinned to the revision supplied by Nuth. The agent configures dashboard frames rather than writing React. Available data depends on each public provider and instrument.",
+    "skillPath": "skills/zframes/SKILL.md"
   }
 ];

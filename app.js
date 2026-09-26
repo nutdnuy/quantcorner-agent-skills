@@ -164,8 +164,6 @@
     if (button.hasAttribute('data-feature-detail')) openDetail('anthropic-financial-services',button);
     if (button.hasAttribute('data-close')) button.closest('dialog').close();
     if (button.hasAttribute('data-open-guide')) $('#guide-dialog').showModal();
-    if (button.hasAttribute('data-open-contribute')) $('#contribute-dialog').showModal();
-    if (button.hasAttribute('data-open-about')) $('#about-dialog').showModal();
   });
   $$('dialog').forEach(dialog => {
     dialog.addEventListener('click',event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
@@ -181,38 +179,17 @@
   $('#saved-nav').addEventListener('click',() => { state = {...state,q:'',kind:'all',category:'all',saved:true}; render(); $('#library').scrollIntoView(); });
   $('#clear-filters').addEventListener('click',reset);
   $('#empty-reset').addEventListener('click',reset);
-  $('#copy-catalog').addEventListener('click',() => copyText(location.href,'Catalog link copied'));
   document.addEventListener('keydown',event => {
     if (event.key === 'Escape' && $('.mobile-nav[open]')) { $('.mobile-nav').open = false; $('.mobile-nav summary').focus(); }
     if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.target.closest('input,textarea,select,[contenteditable=true]') && !document.querySelector('dialog[open]')) { event.preventDefault(); $('#search').focus(); }
   });
   $$('.mobile-nav a').forEach(link => link.addEventListener('click',() => { $('.mobile-nav').open = false; }));
-  $('#suggest-form').addEventListener('submit',event => {
-    event.preventDefault();
-    const input = $('#suggest-url');
-    let url;
-    try { url = new URL(input.value.trim()); } catch { input.setCustomValidity('Enter a valid public GitHub repository URL.'); input.reportValidity(); return; }
-    if (url.protocol !== 'https:' || url.hostname !== 'github.com' || !/^\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/.test(url.pathname) || url.username || url.password || url.port) {
-      input.setCustomValidity('Use a repository URL such as https://github.com/owner/repository.'); input.reportValidity(); return;
-    }
-    const reason = $('#suggest-reason').value.trim();
-    if (!reason) { $('#suggest-reason').setCustomValidity('Describe why this repository is useful.'); $('#suggest-reason').reportValidity(); return; }
-    input.setCustomValidity('');
-    $('#suggest-draft').value = `QuantCorner repository suggestion\n\nRepository: https://github.com${url.pathname.replace(/\/$/,'')}\n\nWhy it is useful:\n${reason}\n\nPlease review the source, compatibility, and license before adding it to the collection.`;
-    $('#suggest-form').hidden = true; $('#suggest-result').hidden = false; $('#suggest-draft').focus();
-  });
-  $('#suggest-url').addEventListener('input',event => event.target.setCustomValidity(''));
-  $('#suggest-reason').addEventListener('input',event => event.target.setCustomValidity(''));
-  $('#copy-suggestion').addEventListener('click',() => copyText($('#suggest-draft').value,'Suggestion copied. Nothing has been submitted.'));
-  $('#edit-suggestion').addEventListener('click',() => { $('#suggest-form').hidden = false; $('#suggest-result').hidden = true; $('#suggest-url').focus(); });
   window.addEventListener('popstate',() => { state = readState(); render(); });
   window.addEventListener('storage',event => {
     if (event.key === storageKey) {
       try { const data = JSON.parse(event.newValue || '[]'); if (Array.isArray(data)) { saved = new Set(data.filter(id => knownIds.has(id))); render(); } } catch { /* Ignore malformed cross-tab data. */ }
     }
   });
-  $('#skill-total').textContent = catalog.filter(item => item.kind === 'Skill').length;
-  $('#source-total').textContent = new Set(catalog.filter(item => item.kind === 'Skill').map(item => item.repo)).size;
   hydrateIcons();
   state = readState();
   render();
