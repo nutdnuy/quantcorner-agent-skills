@@ -6,14 +6,10 @@
   const $$ = selector => [...document.querySelectorAll(selector)];
   const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const icon = name => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${window.QC_ICONS?.[name] || ''}</svg>`;
-  const storageKey = 'quantcorner-agent-library-saved-v1';
   const knownIds = new Set(catalog.map(item => item.id));
+  const bookmarks = window.QCBookmarks;
   let saved = new Set();
-  let storageAvailable = true;
-  try {
-    const stored = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    if (Array.isArray(stored)) saved = new Set(stored.filter(id => knownIds.has(id)));
-  } catch { storageAvailable = false; }
+  let bookmarkBusy = false;
   const categories = ['all', ...new Set(catalog.map(item => item.category))];
   const kinds = ['all','Skill','claude','Skill collection','AI agent','Research framework','MCP server'];
   let state;
@@ -98,7 +94,7 @@
     const noun = state.kind === 'Skill' || state.kind === 'claude' ? 'skill' : 'item';
     $('#result-count').innerHTML = `<strong>${visible.length} ${noun}${visible.length === 1 ? '' : 's'}</strong> <span class="count-muted">${visible.length === catalog.length ? 'to explore' : `of ${catalog.length} in the collection`}</span>`;
     $('#empty-state').hidden = visible.length > 0;
-    $('#empty-message').textContent = state.saved && saved.size === 0 ? 'Use the bookmark button to save skills and tools to your personal reading list.' : 'Try a broader topic or clear your filters.';
+    $('#empty-message').textContent = state.saved && !bookmarks.snapshot.loggedIn ? 'Sign in or create an account to view your saved skills. Use the Saved button to continue.' : state.saved && saved.size === 0 ? 'Use the bookmark button to save skills and tools to your member collection.' : 'Try a broader topic or clear your filters.';
     $('#clear-filters').hidden = !(state.q || state.category !== 'all' || state.kind !== 'all' || state.saved);
     $('#saved-count').textContent = saved.size;
     $('#saved-filter').setAttribute('aria-pressed',String(state.saved));
@@ -112,20 +108,42 @@
     syncUrl();
   }
   function reset() { state = {...state,q:'',category:'all',kind:'all',saved:false}; render(); }
-  function save(id,trigger) {
-    if (!knownIds.has(id)) return;
-    if (saved.has(id)) saved.delete(id); else saved.add(id);
-    try { localStorage.setItem(storageKey,JSON.stringify([...saved])); } catch { storageAvailable = false; }
-    const inDialog = !!trigger?.closest('dialog');
-    render();
-    if (inDialog) {
-      trigger.setAttribute('aria-pressed',String(saved.has(id)));
-      trigger.innerHTML = `${icon('bookmark')} ${saved.has(id) ? 'Saved':'Save for later'}`;
-    } else {
-      const replacement = document.querySelector(`#repo-grid [data-save="${id}"]`);
-      (replacement || $('#saved-filter')).focus({preventScroll:true});
+  function bookmarkError(error) {
+    if (error.message === 'cancelled') { toast('Sign in or create an account to save bookmarks.'); return; }
+    if (error.message === 'standalone' || !bookmarks.connected) {
+      $('#detail-dialog').close();
+      $('#member-dialog').showModal();
+      return;
     }
-    toast(`${saved.has(id) ? 'Saved to your collection':'Removed from saved'}${storageAvailable ? '': ' · This session only'}`);
+    toast('Could not update bookmarks. Please try again.');
+  }
+  async function save(id,trigger) {
+    if (!knownIds.has(id) || bookmarkBusy) return;
+    bookmarkBusy = true;
+    const desired = !saved.has(id);
+    trigger.disabled = true;
+    trigger.setAttribute('aria-busy','true');
+    if (!bookmarks.snapshot.loggedIn) toast('Sign in or create an account to save this skill.');
+    try {
+      const result = await bookmarks.save(id,desired);
+      if (!result.loggedIn) throw new Error('cancelled');
+      toast(desired ? 'Saved to your member collection' : 'Removed from saved');
+      const replacement = document.querySelector(`#repo-grid [data-save="${id}"]`);
+      if (!trigger.isConnected) (replacement || $('#saved-filter')).focus({preventScroll:true});
+    } catch (error) { bookmarkError(error); }
+    finally { bookmarkBusy = false; trigger.disabled = false; trigger.removeAttribute('aria-busy'); }
+  }
+  async function showSaved(clearFilters = false) {
+    if (bookmarkBusy) return;
+    bookmarkBusy = true;
+    try {
+      const result = await bookmarks.login();
+      if (!result.loggedIn) throw new Error('cancelled');
+      state = clearFilters ? {...state,q:'',kind:'all',category:'all',saved:true} : {...state,saved:!state.saved};
+      render();
+      if (clearFilters) $('#library').scrollIntoView();
+    } catch (error) { bookmarkError(error); }
+    finally { bookmarkBusy = false; }
   }
   function openDetail(id,trigger) {
     const item = catalog.find(entry => entry.id === id);
@@ -176,8 +194,8 @@
   $('#search').addEventListener('input',event => { state.q = event.target.value; render(); });
   $('#kind').addEventListener('change',event => { state.kind = event.target.value; render(); });
   $('#sort').addEventListener('change',event => { state.sort = event.target.value; render(); });
-  $('#saved-filter').addEventListener('click',() => { state.saved = !state.saved; render(); });
-  $('#saved-nav').addEventListener('click',() => { state = {...state,q:'',kind:'all',category:'all',saved:true}; render(); $('#library').scrollIntoView(); });
+  $('#saved-filter').addEventListener('click',() => showSaved());
+  $('#saved-nav').addEventListener('click',() => showSaved(true));
   $('#clear-filters').addEventListener('click',reset);
   $('#empty-reset').addEventListener('click',reset);
   document.addEventListener('keydown',event => {
@@ -186,12 +204,14 @@
   });
   $$('.mobile-nav a').forEach(link => link.addEventListener('click',() => { $('.mobile-nav').open = false; }));
   window.addEventListener('popstate',() => { state = readState(); render(); });
-  window.addEventListener('storage',event => {
-    if (event.key === storageKey) {
-      try { const data = JSON.parse(event.newValue || '[]'); if (Array.isArray(data)) { saved = new Set(data.filter(id => knownIds.has(id))); render(); } } catch { /* Ignore malformed cross-tab data. */ }
-    }
-  });
   hydrateIcons();
   state = readState();
-  render();
+  bookmarks.subscribe(data => { saved = new Set(data.ids.filter(id => knownIds.has(id))); render(); });
+  // Retry only reads if the iframe loaded before the Wix page code.
+  async function connect(attempt = 0) {
+    try { await bookmarks.refresh(); }
+    catch (_) { if (attempt < 2) setTimeout(() => connect(attempt + 1), 1500); }
+  }
+  connect();
+  window.addEventListener('focus', () => { if (!bookmarkBusy) bookmarks.refresh().catch(() => {}); });
 })();

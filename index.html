@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="styles.css?v=20260926-generated-hero-v1">
   <script defer src="assets/icons.js?v=20260926-white"></script>
   <script defer src="catalog.js?v=20260926-expansion20"></script>
-  <script defer src="app.js?v=20260926-mcp"></script>
+  <script defer src="member-bookmarks.js?v=20260928-members"></script>
+  <script defer src="app.js?v=20260928-members"></script>
 </head>
 <body>
   <a class="skip-link" href="#library">Skip to library</a>
@@ -56,6 +57,7 @@
   </main>
   <dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-head"><span class="eyebrow">SOURCE NOTES</span><button class="icon-button" data-close aria-label="Close details"><span data-icon="x"></span></button></div><div id="detail-content"></div></dialog>
   <dialog id="guide-dialog" aria-labelledby="guide-title"><div class="dialog-head"><span class="eyebrow">QUANTCORNER FIELD GUIDE</span><button class="icon-button" data-close aria-label="Close getting started"><span data-icon="x"></span></button></div><h2 id="guide-title">Start with the right building block.</h2><p class="dialog-intro">A skill, an agent, and a research framework serve different jobs. This library keeps their requirements visible.</p><div class="guide-item"><span data-icon="file-code"></span><div><h3>Individual skills & collections</h3><p>Each individual skill links to a specific SKILL.md. Collections group multiple skills in one repository and are counted separately. Check the listed agent compatibility and follow the source installation instructions.</p></div></div><div class="guide-item"><span data-icon="database"></span><div><h3>MCP servers</h3><p>Connect an MCP-compatible assistant to external data and tools. Check authentication, provider plans, and whether tools can change state before configuring a connection.</p></div></div><div class="guide-item"><span data-icon="terminal-2"></span><div><h3>AI agents</h3><p>Applications that coordinate research tasks. They may require Python, model API keys, data access, and separate setup. They are not drop-in Claude Code skills.</p></div></div><div class="guide-item"><span data-icon="stack-2"></span><div><h3>Research frameworks</h3><p>Libraries for data, backtesting, and portfolio analysis. Use their documented APIs in your research environment; agent integration requires additional work.</p></div></div><p class="dialog-note">Repository descriptions are source-based summaries. Runtime behavior, investment results, and security have not been audited by QuantCorner.</p><button class="button button-primary" data-close>Explore the library <span data-icon="arrow-right"></span></button></dialog>
+  <dialog id="member-dialog" aria-labelledby="member-title"><div class="dialog-head"><span class="eyebrow">MEMBER BOOKMARKS</span><button class="icon-button" data-close aria-label="Close member bookmarks"><span data-icon="x"></span></button></div><h2 id="member-title">Your skills, saved with your account.</h2><p class="dialog-intro">Sign in or create a QuantCorner account before saving skills. Open the library on QuantCorner to continue.</p><a class="button button-primary" href="https://www.quant-corner.com/agent-skills" target="_top">Open QuantCorner <span data-icon="arrow-up-right"></span></a></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <noscript><p class="wrap">Enable JavaScript to browse and filter the repository catalog.</p></noscript>
 </body>
